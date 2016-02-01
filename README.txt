@@ -30,13 +30,17 @@ HowTo :
                   (ie, USERSCR=/Users/jeremyfirst/tmp) 
         3) GMSPATH => This should be set to the gamess install location (ie, /Users/jeremyfirst/gamess) 
                   (ie, GMSPATH=/Users/jeremyfirst/gamess) 
-    Make sure that the scratch folders exists, and are empty. 
+    Make sure that the scratch folders exist, and are empty. 
         $ cd $HOME      ##Go to home directory. 
         $ mkdir tmp     ##Create directory
         $ rm tmp/*      ##Remove anything in the tmp directory. 
     Download and install RED-vIII (http://upjv.q4md-forcefieldtools.org/RED/) 
+        In the RED-vIII.5..pl script, edit the variable NP (line 7341) 
+            to reflect the correct number of CPUs on your machine. 
+            (ie, $NP    = "2"   for a 2 CPU machine) 
     Edit run_parameter.sh 
         1) redDir => This needs to be set to the RED-III tools folder. 
+           This is line #2. 
                  (ie, redDir=/Users/jeremyfirst/RED-II.52-Tools-Files) 
     Download and install AmberTools15 (http://ambermd.org/AmberTools15-get.html). This will take some time.  
         Be sure to add these executables to your path. 
