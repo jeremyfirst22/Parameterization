@@ -150,7 +150,7 @@ rename_rd(){
 run_acpype(){
     printf "Running ACPYPE.................................."
     if [ ! -f $mol.acpype/$mol.itp ] ; then 
-        acpype -i $mol.mol2 -c user -a amber  >> $logFile 2>> $errFile  
+        acpype -i $mol.mol2 -c user -a amber --gmx45 -o gmx >> $logFile 2>> $errFile  
         fi 
     check $mol.acpype/$mol\_GMX.gro $mol.acpype/$mol\_GMX.itp $mol.acpype/$mol\_GMX.top 
     printf "Completed\n" 
